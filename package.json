@@ -3,21 +3,27 @@
   "version": "1.0.0",
   "description": "lowdb sample for 1.125",
   "main": "index.js",
-  "presets": [
-    "@babel/preset-env"
-  ],
   "scripts": {
     "test": "jest"
   },
-  "author": "richie@gmail.com",
+  "author": "abel@mit.edu",
   "license": "MIT",
   "dependencies": {
-    "@types/react-router-dom": "^5.3.2",
     "cors": "^2.8.5",
     "docker": "^1.0.0",
     "express": "^4.17.1",
+    "firebase": "^9.4.1",
     "lowdb": "^1.0.0",
+    "mongo": "^0.1.0",
     "mongodb": "^3.7.3"
   },
-  "keywords": []
+  "keywords": [],
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/rnathaniel85/badbankfinal.git"
+  },
+  "bugs": {
+    "url": "https://github.com/rnathaniel85/badbankfinal/issues"
+  },
+  "homepage": "https://github.com/rnathaniel85/badbankfinal#readme"
 }

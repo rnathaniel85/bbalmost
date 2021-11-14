@@ -1,10 +1,11 @@
 function Balance(){
   const [show, setShow]     = React.useState(true);
   const [status, setStatus] = React.useState('');  
+  const { user, updateUser } = React.useContext(UserContext);
 
   return (
     <Card
-      bgcolor="info"
+      bgcolor="danger"
       header="Balance"
       status={status}
       body={show ?
@@ -22,7 +23,7 @@ function BalanceMsg(props){
       className="btn btn-light" 
       onClick={() => {
         props.setShow(true);
-        props.setStatus('');
+        // props.setStatus('');
       }}>
         Check balance again
     </button>
@@ -32,16 +33,18 @@ function BalanceMsg(props){
 function BalanceForm(props){
   const [email, setEmail]   = React.useState('');
   const [balance, setBalance] = React.useState('');  
+  const { user, updateUser } = React.useContext(UserContext);
 
   function handle(){
-    fetch(`/account/findOne/${email}`)
+    fetch(`/account/findOne/${user.user.email}`)
     .then(response => response.text())
     .then(text => {
+        console.log(text)
         try {
             const data = JSON.parse(text);
-            props.setStatus(text);
+            props.setStatus(data.balance);
             props.setShow(false);
-            setBalance(user.balance);
+            setBalance(data.balance);
             console.log('JSON:', data);
         } catch(err) {
             props.setStatus(text)
@@ -52,13 +55,13 @@ function BalanceForm(props){
 
   return (<>
 
-    Email<br/>
+    {/* Email<br/>
     <input type="input" 
       className="form-control" 
       placeholder="Enter email" 
       value={email} 
-      onChange={e => setEmail(e.currentTarget.value)}/><br/>
-
+      onChange={e => setEmail(e.currentTarget.value)}/><br/> */}
+    {/* Balance: {balance} */}
     <button type="submit" 
       className="btn btn-light" 
       onClick={handle}>
