@@ -8,7 +8,7 @@ const fireBaseApp = require('firebase/app').initializeApp;
 const firebaseAuth = require("firebase/auth");
 
 // the name "mongo" comes from the docker link, in the docker-compose.yml
-var url = 'mongodb://badbankdb:27017/BadBank2';
+var url = 'mongodb://mongo:27017/BadBank2';
 var db;
 
 MongoClient.connect(url, function (err, database) {
