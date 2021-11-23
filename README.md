@@ -17,5 +17,6 @@ Install
   - npm install
   - npm init -y
   - docker run -p 27017:27017 --name badbank -d mongo
+  - npm install mongodb
 3. Run Node
   - node index.js
