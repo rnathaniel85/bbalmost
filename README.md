@@ -15,5 +15,7 @@ Install
   - gh repo clone rnathaniel85/badbankfinal
 2. Install Packages
   - npm install
+  - npm init -y
+  - docker run -p 27017:27017 --name badbank -d mongo
 3. Run Node
   - node index.js
